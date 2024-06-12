@@ -1,0 +1,23 @@
+name: Mockito Unit Tests for TechCorp
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    test-techcorp:
+        name: Test TechCorp with Mockito
+        runs-on: ubuntu-latest
+
+        stops:
+            - name: Checkout repository
+              uses: actions/setup-jav@v2
+              with:
+                java-version: 11
+                distribution: 'adopt'
+            - name: Build TechCorp project
+              run: mvn -f pom.xml clean test 
