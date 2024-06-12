@@ -1,5 +1,4 @@
 name: Mockito Unit Tests for TechCorp
-
 on:
     push:
         branches:
@@ -7,15 +6,15 @@ on:
     pull_request:
         branches:
             - main
-
 jobs:
     test-techcorp:
         name: Test TechCorp with Mockito
         runs-on: ubuntu-latest
-
-        stops:
+        steps:
             - name: Checkout repository
               uses: actions/setup-jav@v2
+            
+            - name: Set up JDK 11
               with:
                 java-version: 11
                 distribution: 'adopt'
