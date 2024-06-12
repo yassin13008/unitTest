@@ -3,10 +3,10 @@ name: Run Mockito Unit Tests for TechCorp
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   test-techcorp:
